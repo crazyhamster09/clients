@@ -7,45 +7,45 @@
 *Целевая переменная* (таргет) – `satisfaction` (удовлетворенность клиента полетом), бинарная (*satisfied* или *neutral or dissatisfied*)
 
 ### Признаки
-`Gender` (categorical: *Male* или *Female*): пол клиента
+- `Gender` (categorical: *Male* или *Female*): пол клиента
 
-`Age` (numeric, int): количество полных лет
+- `Age` (numeric, int): количество полных лет
 
-`Customer Type` (categorical: *Loyal Customer* или *disloyal Customer*): лоялен ли клиент авиакомпании?
+- `Customer Type` (categorical: *Loyal Customer* или *disloyal Customer*): лоялен ли клиент авиакомпании?
 
-`Type of Travel` (categorical: *Business travel* или *Personal Travel*): тип поездки
+- `Type of Travel` (categorical: *Business travel* или *Personal Travel*): тип поездки
 
-`Class` (categorical: *Business*, *Eco* или *Eco Plus*): класс обслуживания в самолете
+- `Class` (categorical: *Business*, *Eco* или *Eco Plus*): класс обслуживания в самолете
 
-`Flight Distance` (numeric, int): дальность перелета (в милях)
+- `Flight Distance` (numeric, int): дальность перелета (в милях)
 
-`Departure Delay in Minutes` (numeric, int): задержка отправления (неотрицательная)
+- `Departure Delay in Minutes` (numeric, int): задержка отправления (неотрицательная)
 
-`Arrival Delay in Minutes` (numeric, int): задержка прибытия (неотрицательная)
+- `Arrival Delay in Minutes` (numeric, int): задержка прибытия (неотрицательная)
 
 Признаки, перечисленные ниже, являются числовыми. По смыслу они категориальные: клиент ставил оценку от 1-го до 5-ти включительно. Есть выбросы!
 
-`Inflight wifi service` (categorical, int): оценка клиентом интернета на борту
+- `Inflight wifi service` (categorical, int): оценка клиентом интернета на борту
 
-`Departure/Arrival time convenient` (categorical, int): оценка клиентом удобство времени прилета и вылета
+- `Departure/Arrival time convenient` (categorical, int): оценка клиентом удобство времени прилета и вылета
 
-`Ease of Online booking` (categorical, int): оценка клиентом удобства онлайн-бронирования
+- `Ease of Online booking` (categorical, int): оценка клиентом удобства онлайн-бронирования
 
-`Gate location` (categorical, int): оценка клиентом расположения выхода на посадку в аэропорту
+- `Gate location` (categorical, int): оценка клиентом расположения выхода на посадку в аэропорту
 
-`Food and drink` (categorical, int): оценка клиентом еды и напитков на борту
+- `Food and drink` (categorical, int): оценка клиентом еды и напитков на борту
 
-`Online boarding` (categorical, int): оценка клиентом выбора места в самолете
+- `Online boarding` (categorical, int): оценка клиентом выбора места в самолете
 
-`Seat comfort` (categorical, int): оценка клиентом удобства сиденья
+- `Seat comfort` (categorical, int): оценка клиентом удобства сиденья
 
-`Inflight entertainment` (categorical, int): оценка клиентом развлечений на борту
+- `Inflight entertainment` (categorical, int): оценка клиентом развлечений на борту
 
-`On-board service` (categorical, int): оценка клиентом обслуживания на борту
+- `On-board service` (categorical, int): оценка клиентом обслуживания на борту
 
-`Leg room service` (categorical, int): оценка клиентом места в ногах на борту
+- `Leg room service` (categorical, int): оценка клиентом места в ногах на борту
 
-`Baggage handling` (categorical, int): оценка клиентом обращения с багажом
+- `Baggage handling` (categorical, int): оценка клиентом обращения с багажом
 
 `Checkin service` (categorical, int): оценка клиентом регистрации на рейс
 
