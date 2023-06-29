@@ -90,7 +90,7 @@ def sidebar_input_features():
                             step=1)
     inflight_entertainment  = st.sidebar.slider("Развлечения на борту", min_value=1, max_value=5, value=20,
                             step=1)
-    on-board_service  = st.sidebar.slider("Обслуживание посадки", min_value=1, max_value=5, value=20,
+    onboard_service  = st.sidebar.slider("Обслуживание посадки", min_value=1, max_value=5, value=20,
                             step=1)
     leg_room_service  = st.sidebar.slider("Обслуживание комнаты с ногами", min_value=1, max_value=5, value=20,
                             step=1)
