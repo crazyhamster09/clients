@@ -63,9 +63,6 @@ def sidebar_input_features():
     gender = st.sidebar.selectbox("Пол", ("Мужской", "Женский"))
     age = st.sidebar.slider("Возраст", min_value=1, max_value=85, value=20,
                             step=1)
-    type_of_travel = st.sidebar.selectbox("Тип поездки", ("Деловая поездка", "Личная поездка"))
-
-    class_ = st.sidebar.selectbox("Класс", ("Бизнес", "Эко", "Эко плюс"))
     flight_distance = st.sidebar.slider("Дальность полета", min_value=1, max_value=89, value=20,
                             step=1)
     departure_delay_in_minutes = st.sidebar.slider("Задержка отправления", min_value=1, max_value=83, value=20,
@@ -105,18 +102,11 @@ def sidebar_input_features():
     translatetion = {
         "Мужской": "Male",
         "Женский": "Female",
-        "Деловая поездка": "Business travel",
-        "Личная поездка": "Personal Travel",
-        "Бизнес":  "Business",
-        "Эко": "Eco",
-        "Эко плюс": "Eco",
     }
 
     data = {
         "Gender": translatetion [gender],
         "Age": age,
-        "Type of Travel": translatetion [type_of_travel],
-        "Class": translatetion [class_],
         "Flight Distance": flight_distance,
         "Departure Delay in Minutes": departure_delay_in_minutes,
         "Arrival Delay in Minutes": arrival_delay_in_minutes,
