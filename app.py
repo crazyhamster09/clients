@@ -78,7 +78,7 @@ def sidebar_input_features():
                             step=1)
     departure_arrival_time_convenient  = st.sidebar.slider("Удобство времени отправления и прибытия", min_value=1, max_value=5, value=2,
                             step=1)
-    ease_of_online_booking  = st.sidebar.slider("Удобство рнлайн бронирования", min_value=1, max_value=5, value=2,
+    ease_of_online_booking  = st.sidebar.slider("Удобство онлайн бронирования", min_value=1, max_value=5, value=2,
                             step=1)
     gate_location  = st.sidebar.slider("Расположение терминала", min_value=1, max_value=5, value=2,
                             step=1)
@@ -92,7 +92,7 @@ def sidebar_input_features():
                             step=1)
     onboard_service  = st.sidebar.slider("Обслуживание посадки", min_value=1, max_value=5, value=2,
                             step=1)
-    leg_room_service  = st.sidebar.slider("Обслуживание комнаты с ногами", min_value=1, max_value=5, value=2,
+    leg_room_service  = st.sidebar.slider("Место для ног", min_value=1, max_value=5, value=2,
                             step=1)
     baggage_handling  = st.sidebar.slider("Транспортировка багажа", min_value=1, max_value=5, value=2,
                             step=1)
