@@ -61,7 +61,7 @@ def process_side_bar_inputs():
 
 def sidebar_input_features():
     gender = st.sidebar.selectbox("Пол", ("Мужской", "Женский"))
-    age = st.sidebar.slider("Возраст", min_value=1, max_value=85, value=20,
+    age = st.sidebar.slider("Возраст", min_value=1, max_value=85,
                             step=1)
     customer_type = st.sidebar.selectbox("Тип потребителя", ("Лояльный клиент", "Нелояльный клиент"))
     type_of_travel = st.sidebar.selectbox("Тип поездки", ("Деловая поездка", "Личная поездка"))
