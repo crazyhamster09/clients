@@ -74,33 +74,33 @@ def sidebar_input_features():
                             step=1)
     arrival_delay_in_minutes = st.sidebar.slider("Задержка прибытия", min_value=1, max_value=84, value=20,
                             step=1)
-    inflight_wifi_service = st.sidebar.slider("Вай-фай на борту", min_value=1, max_value=5, value=5,
+    inflight_wifi_service = st.sidebar.slider("Вай-фай на борту", min_value=1, max_value=5, value=2,
                             step=1)
-    departure_arrival_time_convenient  = st.sidebar.slider("Удобство времени отправления и прибытия", min_value=1, max_value=5, value=5,
+    departure_arrival_time_convenient  = st.sidebar.slider("Удобство времени отправления и прибытия", min_value=1, max_value=5, value=2,
                             step=1)
-    ease_of_online_booking  = st.sidebar.slider("Удобство рнлайн бронирования", min_value=1, max_value=5, value=5,
+    ease_of_online_booking  = st.sidebar.slider("Удобство рнлайн бронирования", min_value=1, max_value=5, value=2,
                             step=1)
-    gate_location  = st.sidebar.slider("Расположение терминала", min_value=1, max_value=5, value=5,
+    gate_location  = st.sidebar.slider("Расположение терминала", min_value=1, max_value=5, value=2,
                             step=1)
-    food_and_drink  = st.sidebar.slider("Питание", min_value=1, max_value=5, value=5,
+    food_and_drink  = st.sidebar.slider("Питание", min_value=1, max_value=5, value=2,
                             step=1)
-    online_boarding  = st.sidebar.slider("Онлайн посадка", min_value=1, max_value=5, value=5,
+    online_boarding  = st.sidebar.slider("Онлайн посадка", min_value=1, max_value=5, value=2,
                             step=1)
-    seat_comfort  = st.sidebar.slider("Удобство сидений", min_value=1, max_value=5, value=5,
+    seat_comfort  = st.sidebar.slider("Удобство сидений", min_value=1, max_value=5, value=2,
                             step=1)
-    inflight_entertainment  = st.sidebar.slider("Развлечения на борту", min_value=1, max_value=5, value=5,
+    inflight_entertainment  = st.sidebar.slider("Развлечения на борту", min_value=1, max_value=5, value=2,
                             step=1)
-    onboard_service  = st.sidebar.slider("Обслуживание посадки", min_value=1, max_value=5, value=5,
+    onboard_service  = st.sidebar.slider("Обслуживание посадки", min_value=1, max_value=5, value=2,
                             step=1)
-    leg_room_service  = st.sidebar.slider("Обслуживание комнаты с ногами", min_value=1, max_value=5, value=5,
+    leg_room_service  = st.sidebar.slider("Обслуживание комнаты с ногами", min_value=1, max_value=5, value=2,
                             step=1)
-    baggage_handling  = st.sidebar.slider("Транспортировка багажа", min_value=1, max_value=5, value=5,
+    baggage_handling  = st.sidebar.slider("Транспортировка багажа", min_value=1, max_value=5, value=2,
                             step=1)
-    checkin_service  = st.sidebar.slider("Регистрация", min_value=1, max_value=5, value=5,
+    checkin_service  = st.sidebar.slider("Регистрация", min_value=1, max_value=5, value=2,
                             step=1)
-    inflight_service  = st.sidebar.slider("Обслуживание на борту", min_value=1, max_value=5, value=5,
+    inflight_service  = st.sidebar.slider("Обслуживание на борту", min_value=1, max_value=5, value=2,
                             step=1)
-    cleanliness  = st.sidebar.slider("Чистота", min_value=1, max_value=5, value=5,
+    cleanliness  = st.sidebar.slider("Чистота", min_value=1, max_value=5, value=2,
                             step=1)
 
 
