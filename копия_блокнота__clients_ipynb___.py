@@ -12,7 +12,6 @@
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
 RANDOM_STATE = 42
 
