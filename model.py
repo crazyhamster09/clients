@@ -26,7 +26,7 @@ def preprocess_data(df: pd.DataFrame, test=True):
     else:
         X_df = df
 
-    to_encode = ['Gender', 'Type of travel']
+    to_encode = ['Gender']
     for col in to_encode:
         dummy = pd.get_dummies(X_df[col], prefix=col)
         X_df = pd.concat([X_df, dummy], axis=1)
