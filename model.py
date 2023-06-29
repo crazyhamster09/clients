@@ -1,4 +1,4 @@
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from pickle import dump, load
 import pandas as pd
@@ -39,7 +39,7 @@ def preprocess_data(df: pd.DataFrame, test=True):
 
 
 def fit_and_save_model(X_df, y_df, path="data/model_weights.mw"):
-    model = RandomForestClassifier()
+    model = LogisticRegression()
     model.fit(X_df, y_df)
 
     test_prediction = model.predict(X_df)
