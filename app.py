@@ -65,7 +65,7 @@ def sidebar_input_features():
                             step=1)
     customer_type = st.sidebar.selectbox("Тип потребителя", (
     "Лояльный клиент", "Нелояльный клиент"))
-    type of travel = st.sidebar.selectbox("Тип поездки", ("Деловая поездка", "Личная поездка"))
+    type_of_travel = st.sidebar.selectbox("Тип поездки", ("Деловая поездка", "Личная поездка"))
 
     class_ = st.sidebar.selectbox("Класс", ("Бизнес", "Эко", "Эко плюс"))
     flight_distance = st.sidebar.slider("Дальность полета", min_value=1, max_value=89, value=20,
