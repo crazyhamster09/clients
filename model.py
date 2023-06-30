@@ -41,32 +41,6 @@ def preprocess_data(df: pd.DataFrame, test=True):
     df = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
 
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
-
-    X_train.shape, X_test.shape
-
-    ss = MinMaxScaler()
-    ss.fit(X_train) # вычислить min, max по каждому столбцу
-
-    X_train = pd.DataFrame(ss.transform(X_train), columns=X_train.columns)
-    X_test = pd.DataFrame(ss.transform(X_test), columns=X_test.columns)
-
-    categorical = ['Gender', 'Customer Type', 'Type of Travel']
-    numeric_features = [col for col in X_train.columns if col not in categorical]
-
-    column_transformer = ColumnTransformer([
-    ('ohe', OneHotEncoder(drop='first', handle_unknown="ignore"), categorical),
-    ('scaling', MinMaxScaler(), numeric_features)
-    ])
-
-    X_train_transformed = column_transformer.fit_transform(X_train)
-    X_test_transformed = column_transformer.transform(X_test)
-
-    lst = list(column_transformer.transformers_[0][1].get_feature_names_out())
-    lst.extend(numeric_features)
-
-    X_train_transformed = pd.DataFrame(X_train_transformed, columns=lst)
-    X_test_transformed = pd.DataFrame(X_test_transformed, columns=lst)
 
 
 def fit_and_save_model(X_df, y_df, path="data/model_weights.mw"):
