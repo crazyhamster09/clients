@@ -40,11 +40,7 @@ def preprocess_data(df: pd.DataFrame, test=True):
     df = df[(df['Departure/Arrival time convenient'] <= 5)]
     df = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
 
-    X['Customer Type'] = X['Customer Type'].map({'Loyal Customer' : 1, 'disloyal Customer' : 0})
-    X['Type of Travel'] = X['Type of Travel'].map({'Business travel' : 1, 'Personal Travel' : 0})
-    X['Gender'] = X['Gender'].map({'Male' : 1, 'Female' : 0})
-
-    X.drop(['Class'], axis=1, inplace=True)
+    
 
     y = y.map({'satisfied': 1, 'neutral or dissatisfied': 0}).astype(int)
 
