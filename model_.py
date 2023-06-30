@@ -55,8 +55,8 @@ def preprocess_data(df: pd.DataFrame, test=True):
 
 def fit_and_save_model(X_df, y_df, path="data/model_weights.mw"):
     model = LogisticRegression()
-    model.fit(X_train_transformed, y_train)
-    pred = model.predict(X_test_transformed)
+    model.fit(X_df, y_df)
+    pred = model.predict(X_df)
 
     accuracy = accuracy_score(test_prediction, y_df)
     print(f"Model accuracy is {accuracy}")
