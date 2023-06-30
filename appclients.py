@@ -6,6 +6,8 @@ from model_ import open_data, preprocess_data, split_data, load_model_and_predic
 
 def process_main_page():
     show_main_page()
+    process_side_bar_inputs()
+    
 
 
 def show_main_page():
