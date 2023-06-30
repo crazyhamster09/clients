@@ -145,7 +145,4 @@ def sidebar_input_features():
 
     return df
 
-if __name__ == "__main__":
-    process_main_page()
-
 
