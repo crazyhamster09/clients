@@ -63,9 +63,6 @@ def load_model_and_predict(df, path="data/model_weights.mw"):
     prediction_proba = model.predict_proba(df)[0]
     # prediction_proba = np.squeeze(prediction_proba)
 
-    classes = probs[:,1] > 0.03
-
-    confusion_matrix(y_test, classes), recall_score(y_test, classes)
 
     encode_prediction_proba = {
         0: "Клиент не удовлетворен с вероятностью",
