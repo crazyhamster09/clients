@@ -71,10 +71,10 @@ def load_model_and_predict(df, path="data/model_weights.mw"):
     with open(path, "rb") as file:
         model = load(file)
 
-    prediction = model.predict(df)[0]
+    prediction = model.predict(X_df)[0]
     # prediction = np.squeeze(prediction)
 
-    prediction_proba = model.predict_proba(df)[0]
+    prediction_proba = model.predict_proba(X_df)[0]
     # prediction_proba = np.squeeze(prediction_proba)
 
 
