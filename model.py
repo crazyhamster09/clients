@@ -19,7 +19,7 @@ from pickle import dump, load
 
 
 def split_data(df: pd.DataFrame):
-    y = df["satisfaction"]
+    y = df['satisfaction']
     X = df[["Gender", "Age", "Customer Type", "Type of Travel", "Class", "Flight Distance", "Departure Delay in Minutes", "Arrival Delay in Minutes", "Inflight wifi service", "Departure/Arrival time convenient", "Ease of Online booking", "Gate location", "Food and drink", "Online boarding", "Seat comfort", "Inflight entertainment", "On-board service", "Leg room service", "Baggage handling", "Checkin service", "Inflight service", "Cleanliness"]]
 
     return X, y
