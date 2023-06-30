@@ -39,6 +39,11 @@ def preprocess_data(df: pd.DataFrame, test=True):
     else:
         X_df = df
 
+    if test:
+        return X_df, y_df
+    else:
+        return X_df
+
 
 
 
