@@ -80,7 +80,7 @@ def sidebar_input_features():
     }
 
     data = {
-        "id": id,
+        
         "Gender": translatetion [gender],
         "Age": age,
         "Customer Type": translatetion [customer_type],
