@@ -2,8 +2,7 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 import pickle
-
-df = pd.read_csv('data/clients.csv')
+from clients_ipynb__ import df, model
 
 
 image = Image.open('data/Без названия.jpg')
@@ -23,8 +22,6 @@ st.write(
 
 st.image(image)
 
-with open('data/model.pickle', 'rb') as f:
-    model = pickle.load(f)
 
 st.write("## Ваши данные")
 st.sidebar.header('Заданные пользователем параметры')
