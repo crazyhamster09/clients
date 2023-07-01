@@ -44,9 +44,9 @@ def split_data(df: pd.DataFrame):
         X_df = pd.concat([X_df, dummy], axis=1)
         X_df.drop(col, axis=1, inplace=True)
 
-    X['Customer Type'] = X['Customer Type'].map({'Loyal Customer' : 1, 'disloyal Customer' : 0})
-    X['Type of Travel'] = X['Type of Travel'].map({'Business travel' : 1, 'Personal Travel' : 0})
-    X['Gender'] = X['Gender'].map({'Male' : 1, 'Female' : 0})
+    X_df['Customer Type'] = X_df['Customer Type'].map({'Loyal Customer' : 1, 'disloyal Customer' : 0})
+    X_df['Type of Travel'] = X_df['Type of Travel'].map({'Business travel' : 1, 'Personal Travel' : 0})
+    X_df['Gender'] = X_df['Gender'].map({'Male' : 1, 'Female' : 0})
     
     return X_df, y_df
     
