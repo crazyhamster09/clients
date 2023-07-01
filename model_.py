@@ -18,9 +18,9 @@ def open_data(path="https://raw.githubusercontent.com/evgpat/edu_stepik_from_ide
 
 
 def preprocess_data(df: pd.DataFrame, test=True):
-    df_preprocessed.dropna(inplace=True)
-    Q1 = df_preprocessed['Age'].quantile(q=.25)
-    Q3 = df_preprocessed['Age'].quantile(q=.75)
+    df.dropna(inplace=True)
+    Q1 = df'Age'].quantile(q=.25)
+    Q3 = df['Age'].quantile(q=.75)
     df_preprocessed = df[(df['Age'] > Q1-1.5*(Q3-Q1)) & (df['Age'] < Q3+1.5*(Q3-Q1))& (df['Flight Distance'] > Q1-1.5*(Q3-Q1)) & (df['Flight Distance'] < Q3+1.5*(Q3-Q1))&(df['Departure Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Departure Delay in Minutes'] < Q3+1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] < Q3+1.5*(Q3-Q1))& (df['Departure/Arrival time convenient'] > Q1-1.5*(Q3-Q1)) & (df['Departure/Arrival time convenient'] < Q3+1.5*(Q3-Q1))]
     df_preprocessed = df[(df['Departure/Arrival time convenient'] <= 5)]
     df_preprocessed = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
