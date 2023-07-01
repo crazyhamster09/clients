@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 import pickle
-from model_ import preprocess_data, model
+from model_ import preprocess_data, load_model_and_predict
 
 
 image = Image.open('data/Без названия.jpg')
