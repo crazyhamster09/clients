@@ -116,6 +116,4 @@ def sidebar_input_features():
         "Cleanliness": cleanliness
     }
 
-    df = pd.DataFrame(data, index=[0])
-
-    return df
+  
