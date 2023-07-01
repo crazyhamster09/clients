@@ -70,7 +70,7 @@ def sidebar_input_features():
                             step=1)
 
 
-    translatetion = {
+    translation = {
         "Мужской": "Male",
         "Женский": "Female",
         "Лояльный клиент": "Loyal Customer",
@@ -81,10 +81,10 @@ def sidebar_input_features():
 
     data = {
         
-        "Gender": translatetion [gender],
+        "Gender": translation [gender],
         "Age": age,
-        "Customer Type": translatetion [customer_type],
-        "Type of Travel": translatetion [type_of_travel],
+        "Customer Type": translation [customer_type],
+        "Type of Travel": translation [type_of_travel],
         "Flight Distance": flight_distance,
         "Departure Delay in Minutes": departure_delay_in_minutes,
         "Arrival Delay in Minutes": arrival_delay_in_minutes,
