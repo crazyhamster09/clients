@@ -29,8 +29,7 @@ def preprocess_data(df: pd.DataFrame, test=True):
 
 def split_data(df: pd.DataFrame):
     y = df['satisfaction']
-    X = df[["Gender", "Age", "Customer Type", "Type of Travel", "Class", "Flight Distance", "Departure Delay in Minutes", "Arrival Delay in Minutes", "Inflight wifi service", "Departure/Arrival time convenient", "Ease of Online booking", "Gate location", "Food and drink", "Online boarding", "Seat comfort", "Inflight entertainment", "On-board service", "Leg room service", "Baggage handling", "Checkin service", "Inflight service", "Cleanliness"]]
-
+    X = df.drop(['satisfaction', 'id'], axis=1)
     return X, y
 
     train_examples = df['x_train']
