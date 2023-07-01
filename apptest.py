@@ -3,6 +3,8 @@ import streamlit as st
 from PIL import Image
 from model_ import open_data, preprocess_data, split_data, load_model_and_predict
 
+process_side_bar_inputs()
+
 
 image = Image.open('data/Без названия.jpg')
 st.set_page_config(
