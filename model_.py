@@ -86,7 +86,10 @@ def load_model_and_predict(df):
         1: "Спасибо за высокую оценку нашей работы"
     }
 
+    for key, value in encode_prediction_proba.items():
+        prediction_data.update({value: prediction_proba[key]})
 
+    prediction_df = pd.DataFrame(prediction_data, index=[0])
     prediction = encode_prediction[prediction]
 
     return prediction
