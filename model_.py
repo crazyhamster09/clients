@@ -21,22 +21,22 @@ def preprocess_data(df: pd.DataFrame, test=True):
     df.dropna(inplace=True)
     Q1 = df['Age'].quantile(q=.25)
     Q3 = df['Age'].quantile(q=.75)
-    df_preprocessed = df[(df['Age'] > Q1-1.5*(Q3-Q1)) & (df['Age'] < Q3+1.5*(Q3-Q1))& (df['Flight Distance'] > Q1-1.5*(Q3-Q1)) & (df['Flight Distance'] < Q3+1.5*(Q3-Q1))&(df['Departure Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Departure Delay in Minutes'] < Q3+1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] < Q3+1.5*(Q3-Q1))& (df['Departure/Arrival time convenient'] > Q1-1.5*(Q3-Q1)) & (df['Departure/Arrival time convenient'] < Q3+1.5*(Q3-Q1))]
-    df_preprocessed = df[(df['Departure/Arrival time convenient'] <= 5)]
-    df_preprocessed = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
-    df_preprocessed = df.drop(['id'], axis=1)
-    return df_preprocessed
+    df = df[(df['Age'] > Q1-1.5*(Q3-Q1)) & (df['Age'] < Q3+1.5*(Q3-Q1))& (df['Flight Distance'] > Q1-1.5*(Q3-Q1)) & (df['Flight Distance'] < Q3+1.5*(Q3-Q1))&(df['Departure Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Departure Delay in Minutes'] < Q3+1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] < Q3+1.5*(Q3-Q1))& (df['Departure/Arrival time convenient'] > Q1-1.5*(Q3-Q1)) & (df['Departure/Arrival time convenient'] < Q3+1.5*(Q3-Q1))]
+    df = df[(df['Departure/Arrival time convenient'] <= 5)]
+    df = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
+    df = df.drop(['id'], axis=1)
+    return df
 
 
 def split_data(df: pd.DataFrame):
-    y = df_preprocessed['satisfaction']
-    X = df_preprocessed.drop(['satisfaction'], axis=1)
+    y = df['satisfaction']
+    X = df.drop(['satisfaction', 'id', 'Class'], axis=1)
     return X, y
 
-    train_examples = df_preprocessed['x_train']
-    train_labels = df_preprocessed['y_train']
-    test_examples = df_preprocessed['x_test']
-    test_labels = df_preprocessed['y_test']
+    train_examples = df['x_train']
+    train_labels = df['y_train']
+    test_examples = df['x_test']
+    test_labels = df['y_test']
     x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
     
     return X_df, y_df
