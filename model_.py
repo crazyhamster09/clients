@@ -34,6 +34,8 @@ def preprocess_data(df: pd.DataFrame, test=True):
     df = df[(df['Departure/Arrival time convenient'] <= 5)]
     df = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
 
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+
     if test:
         X_df, y_df = split_data(df)
     else:
