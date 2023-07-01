@@ -28,6 +28,7 @@ def write_user_data(df):
 st.sidebar.header('Заданные пользователем параметры')
 
 def sidebar_input_features():     
+    
     gender = st.sidebar.selectbox("Пол", ("Мужской", "Женский"))
     age = st.sidebar.slider("Возраст", min_value=1, max_value=85, value=20,
                             step=1)
@@ -79,6 +80,7 @@ def sidebar_input_features():
     }
 
     data = {
+        "id": id,
         "Gender": translatetion [gender],
         "Age": age,
         "Customer Type": translatetion [customer_type],
