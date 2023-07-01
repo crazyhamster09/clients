@@ -69,10 +69,10 @@ def load_model_and_predict(df):
     with open("data/model.pickle", 'rb') as file:
         model = pickle.load(file)
 
-    prediction = model.predict(df)
+    prediction = model.predict(df)[0]
     # prediction = np.squeeze(prediction)
 
-    prediction_proba = model.predict_proba(df)
+    prediction_proba = model.predict_proba(df)[0]
     # prediction_proba = np.squeeze(prediction_proba)
 
 
