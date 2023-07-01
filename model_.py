@@ -70,7 +70,7 @@ def fit_and_save_model(X_df, y_df):
 
 
 def load_model_and_predict(df):
-    with open('model.pickle', "rb") as file:
+    with open(data/'model.pickle', "rb") as file:
         model = load(file)
 
     prediction = model.predict(df)
