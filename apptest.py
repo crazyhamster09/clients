@@ -3,6 +3,7 @@ import streamlit as st
 from PIL import Image
 import pickle
 
+show_main_page():
 image = Image.open('data/Без названия.jpg')
 st.set_page_config(
         layout="wide",
