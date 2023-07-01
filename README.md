@@ -3,9 +3,9 @@
 Проект представления модели машинного обучения в виде веб-приложения с помощью фреймворка [Streamlit](https://www.streamlit.io/). Модель построена на данных датасета ["Клиенты авиакомпании"](https://github.com/crazyhamster09/clients/blob/main/data/clients.csv). Приложение представлено [здесь](https://clients-7tpl0t8vtfr.streamlit.app/).
 
 ## Файлы
-- 'apptest.py': файл приложения
-- 'model_.py': файл модели
-- 'clients.csv': датасет
+- `apptest.py`: файл приложения
+- `model_.py`: файл модели
+- `clients.csv`: датасет
 - `requirements.txt`: требования к установленным пакетам
 
 ## Описание датасетa "Клиенты авиакомпании"
