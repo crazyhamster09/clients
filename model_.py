@@ -51,7 +51,7 @@ def split_data(df: pd.DataFrame):
 
 
 
-def fit_and_save_model(X, y):
+def fit_and_save_model(X):
     model = LogisticRegression()
     model.fit(X, y)
     pred = model.predict(X)
