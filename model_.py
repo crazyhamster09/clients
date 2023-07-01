@@ -36,10 +36,7 @@ def preprocess_data(df: pd.DataFrame, test=True):
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 
-    if test:
-        X_df, y_df = split_data(df)
-    else:
-        X_df = df
+    
 
     to_encode = ['Gender', 'Customer Type', 'Type of Travel', 'Class']
     for col in to_encode:
