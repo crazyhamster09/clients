@@ -29,14 +29,14 @@ def preprocess_data(df: pd.DataFrame, test=True):
 
 
 def split_data(df: pd.DataFrame):
-    y = df['satisfaction']
-    X = df.drop(['satisfaction'], axis=1)
+    y = df_preprocessed['satisfaction']
+    X = df_preprocessed.drop(['satisfaction'], axis=1)
     return X, y
 
-    train_examples = df['x_train']
-    train_labels = df['y_train']
-    test_examples = df['x_test']
-    test_labels = df['y_test']
+    train_examples = df_preprocessed['x_train']
+    train_labels = df_preprocessed['y_train']
+    test_examples = df_preprocessed['x_test']
+    test_labels = df_preprocessed['y_test']
     x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
     
     return X_df, y_df
