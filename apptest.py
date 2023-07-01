@@ -24,6 +24,7 @@ st.image(image)
 
 st.write("## Ваши данные")
 st.sidebar.header('Заданные пользователем параметры')
+user_input_df = sidebar_input_features()
     train_df = open_data()
     train_X_df, _ = split_data(train_df)
     full_X_df = pd.concat((user_input_df, train_X_df), axis=0)
