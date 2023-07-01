@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 import pickle
-from clients_ipynb__ import df, model
+from model_ import df, model
 
 
 image = Image.open('data/Без названия.jpg')
