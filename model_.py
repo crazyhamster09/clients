@@ -30,7 +30,7 @@ def preprocess_data(df: pd.DataFrame, test=True):
 
 def split_data(df: pd.DataFrame):
     y = df['satisfaction']
-    X = df.drop(['satisfaction', 'id'], axis=1)
+    X = df.drop(['satisfaction'], axis=1)
     return X, y
 
     train_examples = df['x_train']
