@@ -63,14 +63,14 @@ def fit_and_save_model(X_df, y_df):
     accuracy = accuracy_score(test_prediction, y_df)
     print(f"Model accuracy is {accuracy}")
 
-    with open('model.pickle', "wb") as file:
+    with open("data/model.pickle", "wb") as file:
         dump(model, file)
 
     print(f"Model was saved")
 
 
 def load_model_and_predict(df):
-    with open('model.pickle', 'rb') as file:
+    with open("data/model.pickle", 'rb') as file:
         model = pickle.load(file)
 
     prediction = model.predict(df)
