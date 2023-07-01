@@ -22,9 +22,9 @@ st.write(
 
 st.image(image)
 
-write_user_data(df):
-st.write("## Ваши данные")
-st.write(df)
+def write_user_data(df):
+        st.write("## Ваши данные")
+        st.write(df)
 st.sidebar.header('Заданные пользователем параметры')
 user_input_df = sidebar_input_features()
 train_df = open_data()
