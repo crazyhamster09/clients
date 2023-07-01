@@ -23,7 +23,7 @@ st.write(
 
 st.image(image)
 
-with open('data/models.pickle', 'rb') as f:
+with open('data/model.pickle', 'rb') as f:
     model = pickle.load(f)
 
 st.write("## Ваши данные")
