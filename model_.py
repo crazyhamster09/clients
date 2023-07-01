@@ -18,8 +18,6 @@ def open_data(path="https://raw.githubusercontent.com/evgpat/edu_stepik_from_ide
 
 
 def preprocess_data(df: pd.DataFrame, test=True):
-    df = df.reset_index()
-    df_preprocessed = df[df['satisfaction']!='-']
     df_preprocessed.dropna(inplace=True)
     Q1 = df_preprocessed['Age'].quantile(q=.25)
     Q3 = df_preprocessed['Age'].quantile(q=.75)
