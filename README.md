@@ -56,11 +56,11 @@
 - `Baggage handling` (categorical, int): оценка клиентом обращения с багажом
 
 - `Checkin service` (categorical, int): оценка клиентом регистрации на рейс
+- `Inflight service` (categorical, int): оценка клиентом обслуживания на борту
+- `Cleanliness` (categorical, int): оценка клиентом чистоты на борту
 
 ## Обработка данных и построение модели
 В данных были убраны выбросы.
 Для построения модели была использована линейная регрессия.
-
-`Inflight service` (categorical, int): оценка клиентом обслуживания на борту
 
 `Cleanliness` (categorical, int): оценка клиентом чистоты на борту
