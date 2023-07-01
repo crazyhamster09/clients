@@ -6,6 +6,7 @@
 - `apptest.py`: файл приложения
 - `model_.py`: файл модели
 - `clients.csv`: датасет
+- `Clients.ipynb`: файл Colaboratory
 - `requirements.txt`: требования к установленным пакетам
 
 ## Описание датасетa "Клиенты авиакомпании"
