@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image
 import pickle
 
-df = pd.read_csv(data/clients.csv)
+df = pd.read_csv('data/clients.csv')
 
 
 image = Image.open('data/Без названия.jpg')
