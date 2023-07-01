@@ -12,25 +12,27 @@ from pickle import dump, load
 
 
 
-def split_data(df: pd.DataFrame):
-    y = df['satisfaction']
-    X = df[["Gender", "Age", "Customer Type", "Type of Travel", "Class", "Flight Distance", "Departure Delay in Minutes", "Arrival Delay in Minutes", "Inflight wifi service", "Departure/Arrival time convenient", "Ease of Online booking", "Gate location", "Food and drink", "Online boarding", "Seat comfort", "Inflight entertainment", "On-board service", "Leg room service", "Baggage handling", "Checkin service", "Inflight service", "Cleanliness"]]
-
-    return X, y
-
-
 def open_data(path="https://raw.githubusercontent.com/evgpat/edu_stepik_from_idea_to_mvp/main/datasets/clients.csv"):
     df = pd.read_csv(path)
     return df
 
 
 def preprocess_data(df: pd.DataFrame, test=True):
-    df.dropna(inplace=True)
-    Q1 = df['Age'].quantile(q=.25)
-    Q3 = df['Age'].quantile(q=.75)
-    df = df[(df['Age'] > Q1-1.5*(Q3-Q1)) & (df['Age'] < Q3+1.5*(Q3-Q1))& (df['Flight Distance'] > Q1-1.5*(Q3-Q1)) & (df['Flight Distance'] < Q3+1.5*(Q3-Q1))&(df['Departure Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Departure Delay in Minutes'] < Q3+1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] < Q3+1.5*(Q3-Q1))& (df['Departure/Arrival time convenient'] > Q1-1.5*(Q3-Q1)) & (df['Departure/Arrival time convenient'] < Q3+1.5*(Q3-Q1))]
-    df = df[(df['Departure/Arrival time convenient'] <= 5)]
-    df = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
+    df_preprocessed = df[df.satisfaction != '-']
+    df_preprocessed.dropna(inplace=True)
+    Q1 = df_preprocessed['Age'].quantile(q=.25)
+    Q3 = df_preprocessed['Age'].quantile(q=.75)
+    df_preprocessed = df[(df['Age'] > Q1-1.5*(Q3-Q1)) & (df['Age'] < Q3+1.5*(Q3-Q1))& (df['Flight Distance'] > Q1-1.5*(Q3-Q1)) & (df['Flight Distance'] < Q3+1.5*(Q3-Q1))&(df['Departure Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Departure Delay in Minutes'] < Q3+1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] > Q1-1.5*(Q3-Q1)) & (df['Arrival Delay in Minutes'] < Q3+1.5*(Q3-Q1))& (df['Departure/Arrival time convenient'] > Q1-1.5*(Q3-Q1)) & (df['Departure/Arrival time convenient'] < Q3+1.5*(Q3-Q1))]
+    df_preprocessed = df[(df['Departure/Arrival time convenient'] <= 5)]
+    df_preprocessed = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
+    return df_preprocessed
+
+
+def split_data(df: pd.DataFrame):
+    y = df['satisfaction']
+    X = df[["Gender", "Age", "Customer Type", "Type of Travel", "Class", "Flight Distance", "Departure Delay in Minutes", "Arrival Delay in Minutes", "Inflight wifi service", "Departure/Arrival time convenient", "Ease of Online booking", "Gate location", "Food and drink", "Online boarding", "Seat comfort", "Inflight entertainment", "On-board service", "Leg room service", "Baggage handling", "Checkin service", "Inflight service", "Cleanliness"]]
+
+    return X, y
 
     train_examples = df['x_train']
     train_labels = df['y_train']
