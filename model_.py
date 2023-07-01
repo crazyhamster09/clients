@@ -66,12 +66,12 @@ def fit_and_save_model(X_df, y_df):
     with open('model.pickle', "wb") as file:
         dump(model, file)
 
-    print(f"Model was saved to {'./data/model.pickle'}")
+    print(f"Model was saved")
 
 
 def load_model_and_predict(df):
-    with open('./data/model.pickle', "rb") as file:
-        model = load(file)
+    with open('model.pickle', 'rb') as file:
+        model = pickle.load(file)
 
     prediction = model.predict(df)
     # prediction = np.squeeze(prediction)
