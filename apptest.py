@@ -116,6 +116,8 @@ def sidebar_input_features():
         "Inflight service": inflight_service,
         "Cleanliness": cleanliness
     }
-        df = pd.DataFrame(data, index=[0])
-        return df
+
+    df = pd.DataFrame(data, index=[0])
+
+    return df
   
