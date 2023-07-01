@@ -87,7 +87,7 @@ def load_model_and_predict(df):
     }
 
     
-     prediction_data = {}
+    prediction_data = {}
     for key, value in encode_prediction_proba.items():
         prediction_data.update({value: prediction_proba[key]})
 
