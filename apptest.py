@@ -25,16 +25,16 @@ st.image(image)
 st.write("## Ваши данные")
 st.sidebar.header('Заданные пользователем параметры')
 user_input_df = sidebar_input_features()
-    train_df = open_data()
-    train_X_df, _ = split_data(train_df)
-    full_X_df = pd.concat((user_input_df, train_X_df), axis=0)
-    preprocessed_X_df = preprocess_data(full_X_df, test=False)
+train_df = open_data()
+train_X_df, _ = split_data(train_df)
+full_X_df = pd.concat((user_input_df, train_X_df), axis=0)
+preprocessed_X_df = preprocess_data(full_X_df, test=False)
 
-    user_X_df = preprocessed_X_df[:1]
-    write_user_data(user_X_df)
+user_X_df = preprocessed_X_df[:1]
+write_user_data(user_X_df)
 
-    prediction, prediction_probas = load_model_and_predict(user_X_df)
-    write_prediction(prediction, prediction_probas)
+prediction, prediction_probas = load_model_and_predict(user_X_df)
+write_prediction(prediction, prediction_probas)
 
 def sidebar_input_features():
     gender = st.sidebar.selectbox("Пол", ("Мужской", "Женский"))
