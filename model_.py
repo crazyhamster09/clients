@@ -44,9 +44,6 @@ def split_data(df: pd.DataFrame):
         X = pd.concat([X, dummy], axis=1)
         X.drop(col, axis=1, inplace=True)
 
-    X['Customer Type'] = X['Customer Type'].map({'Loyal Customer' : 1, 'disloyal Customer' : 0})
-    X['Type of Travel'] = X['Type of Travel'].map({'Business travel' : 1, 'Personal Travel' : 0})
-    X['Gender'] = X['Gender'].map({'Male' : 1, 'Female' : 0})
     
     return X, y
     
@@ -54,12 +51,12 @@ def split_data(df: pd.DataFrame):
 
 
 
-def fit_and_save_model(X_df, y_df):
+def fit_and_save_model(X, y):
     model = LogisticRegression()
-    model.fit(X_df, y_df)
-    pred = model.predict(X_df)
+    model.fit(X, y)
+    pred = model.predict(X)
 
-    accuracy = accuracy_score(test_prediction, y_df)
+    accuracy = accuracy_score(test_prediction, y)
     print(f"Model accuracy is {accuracy}")
 
     with open("data/model.pickle", "wb") as file:
@@ -68,14 +65,14 @@ def fit_and_save_model(X_df, y_df):
     print(f"Model was saved")
 
 
-def load_model_and_predict(df):
+def load_model_and_predict(X, y):
     with open("data/model.pickle", 'rb') as file:
         model = pickle.load(file)
 
-    prediction = model.predict(df)
+    prediction = model.predict(X, y)
     # prediction = np.squeeze(prediction)
 
-    prediction_proba = model.predict_proba(df)
+    prediction_proba = model.predict_proba(X, y)
     # prediction_proba = np.squeeze(prediction_proba)
 
 
@@ -101,5 +98,5 @@ def load_model_and_predict(df):
 
 if __name__ == "__main__":
     df = open_data()
-    X_df, y_df = preprocess_data(df)
-    fit_and_save_model(X_df, y_df)
+    X, y = preprocess_data(df)
+    fit_and_save_model(X, y)
