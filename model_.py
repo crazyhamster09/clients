@@ -65,7 +65,7 @@ def fit_and_save_model(X, y):
     print(f"Model was saved")
 
 
-def load_model_and_predict(X, y):
+def load_model_and_predict(X):
     with open("data/model.pickle", 'rb') as file:
         model = pickle.load(file)
 
