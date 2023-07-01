@@ -34,11 +34,11 @@ def preprocess_data(df: pd.DataFrame, test=True):
     df = df[(df['Departure/Arrival time convenient'] <= 5)]
     df = df[(df['Inflight entertainment'] <= 5) & (df['Checkin service'] <= 5) &(df['Cleanliness'] <= 5)]
 
-    train_examples = df['X_train']
+    train_examples = df['x_train']
     train_labels = df['y_train']
-    test_examples = df['X_test']
+    test_examples = df['x_test']
     test_labels = df['y_test']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+    x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 
     
 
