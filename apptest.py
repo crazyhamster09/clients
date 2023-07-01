@@ -3,7 +3,9 @@ import streamlit as st
 from PIL import Image
 import pickle
 
-show_main_page():
+df = pd.read_csv(data/clients.csv)
+
+
 image = Image.open('data/Без названия.jpg')
 st.set_page_config(
         layout="wide",
@@ -19,7 +21,7 @@ st.write(
         """
   )
 
-    st.image(image)
+st.image(image)
 
 with open('models.pickle', 'rb') as f:
     model = pickle.load(f)
