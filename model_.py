@@ -55,7 +55,7 @@ def split_data(df: pd.DataFrame):
 
 
 
-def fit_and_save_model(X_df, y_df, path="data/model_weights.mw"):
+def fit_and_save_model(X_df, y_df):
     model = LogisticRegression()
     model.fit(X_df, y_df)
     pred = model.predict(X_df)
@@ -69,7 +69,7 @@ def fit_and_save_model(X_df, y_df, path="data/model_weights.mw"):
     print(f"Model was saved to {path}")
 
 
-def load_model_and_predict(df, path="data/model_weights.mw"):
+def load_model_and_predict(df):
     with open(path, "rb") as file:
         model = load(file)
 
