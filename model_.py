@@ -37,19 +37,9 @@ def split_data(df: pd.DataFrame):
     test_examples = df['x_test']
     test_labels = df['y_test']
     x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
-
     
-
-    to_encode = ['Gender', 'Customer Type', 'Type of Travel', 'Class']
-    for col in to_encode:
-        dummy = pd.get_dummies(X_df[col], prefix=col)
-        X_df = pd.concat([X_df, dummy], axis=1)
-        X_df.drop(col, axis=1, inplace=True)
-
-    if test:
-        return X_df, y_df
-    else:
-        return X_df
+    return X_df, y_df
+    
 
 
 
